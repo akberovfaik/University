@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.confirm-main {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+    margin-top: 10%;
+}
+
+    .confirm-main p {
+        margin-bottom: 40px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .confirm-main dl {
+        font-size: 15px;
+        color: rgb(29, 28, 28);
+    }
+
+.button {
+    margin-top: 40px;
+}
+
+    .button button {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-right: 20px;
+        transition: 3s;
+    }
+
+    .button a {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+        .button a:hover {
+            text-decoration: underline;
+        }

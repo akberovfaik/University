@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/customlayout.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>@User.Identity.Name</h1>
+    </nav>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-main">
+          <a asp-action="Index" asp-controller="Home" class="active">Main Menu</a>
+          <a asp-action="AdminCrud" asp-controller="Admin">Admin Panel</a>
+          <a asp-action="GiveGrades" asp-controller="Teacher">Give Grades To Students</a>
+          <a asp-action="StuGrades" asp-controller="Student">See Your Grades</a>
+          <a asp-action="Login" asp-controller="Account" class="log-out"
+            >Log Out</a>
+        </div>
+      </div>
+      <div class="content" id="content">@RenderBody()</div>
+    </div>
+  </body>
+</html>

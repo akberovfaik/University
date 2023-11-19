@@ -1,0 +1,42 @@
+﻿@using University.ViewModels
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link class="logo-top" rel="stylesheet" href="~/css/loginstyle.css" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Enter Your Username:</label>
+                <input asp-for="@Model.Username" type="text" id="username" placeholder="Username" />
+            </div>
+            <div class="form-group">
+                <label for="password">EnterYour Password::</label>
+                <input asp-for="@Model.Password" type="password" id="password" placeholder="Password" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+            <div style="color:red">
+                @Html.ValidationMessage("error")
+            </div>
+        </form>
+        <div class="register-link">
+            <p>
+                <a asp-action="Register" asp-controller="Account">Click here to register</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

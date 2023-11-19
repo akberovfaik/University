@@ -1,0 +1,38 @@
+﻿@model University.Data.Students
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/confirmdeletion.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="confirm-main">
+
+        <p>
+            Are you sure you want to delete <br />
+            this student?
+        </p>
+
+        <dl>
+            <dt>Student ID:</dt>
+            <dd>@Model.StuId</dd>
+            <br />
+            <dt>Name:</dt>
+            <dd>@Model.FullName</dd>
+        </dl>
+
+        <form method="post"
+              asp-action="DeleteStudent"
+              asp-route-Id="@Model.StuId">
+            <div class="button">
+                <button type="submit">Yes, delete</button>
+                <a asp-action="AdminCrud">No, cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+﻿@using University.ViewModels
+@model Student_GradeViewModel
+
+@{
+    ViewData["Title"] = "Give Grades";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/givegrades.css" />
+    <title>Teacher Page</title>
+</head>
+<body>
+    <div class="container">
+        <form id="gradeForm" method="post" asp-action="GiveGrades" asp-controller="Teacher">
+            <label for="studentDropdown">Select Student:</label>
+            <select id="StudentName" name="Grade.StudentName" required>
+                <option value="" disabled selected>Students:</option>
+                @foreach (var item in Model.Student)
+                {
+                    <option>@item.FullName</option>
+                }
+            </select>
+
+            <label for="subjectDropdown">Select Subject:</label>
+            <select id="SubjectOfGrade" name="Grade.SubjectOfGrade" required>
+                <option value="" disabled selected>Subjects</option>
+                @foreach (var studentFaculty in Model.StudentFaculties)
+                {
+                    var studentId = studentFaculty.Key;
+                    var faculty = studentFaculty.Value;
+
+                    <optgroup label="@faculty">
+                        @foreach (var subject in Model.SubjectsByFaculty[faculty])
+                        {
+                            <option value="@subject">@subject</option>
+                        }
+                    </optgroup>
+                }
+            </select>
+
+            <label for="grade">Enter Grade:</label>
+            <input type="text" id="Grade" name="Grade.Grade" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="Grade.GradeDate" required />
+
+            <button type="submit">Enter</button>
+        </form>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student's Name</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Date Of Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Grade)
+                    {
+                        <tr>
+                            <td>@item.StudentName</td>
+                            <td>@item.SubjectOfGrade</td>
+                            <td>@item.Grade</td>
+                            <td>@item.GradeDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

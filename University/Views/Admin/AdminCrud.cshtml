@@ -1,0 +1,92 @@
+﻿@using University.ViewModels
+@model StudentViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="~/css/admincrud.css" />
+</head>
+<body>
+    <div class="container">
+        <form method="post" asp-action="AddStudent" asp-controller="Admin">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="FullName" required/>
+            <label for="subjectDropdown">Student's Faculty:</label>
+            <select id="SubjectOfGrade" name="Faculty" required>
+                <option value="">Faculty</option>
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="International Relations">International Relations</option>
+                <option value="Architect">Architect</option>
+            </select>
+            <label for="date">Date Of Birth:</label>
+            <input type="date" id="date" name="DateOfBirth" required />
+            <label for="gender">Gender:</label>
+            <select id="gender" name="Gender" required>
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="MobileNumber" required />
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="Address" required />
+            <button type="submit">Add Student</button>
+        </form>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Faculty</th>
+                        <th>Date Of Birth</th>
+                        <th>Gender</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Students)
+                    {
+                        <tr>
+                            <td>@item.StuId</td>
+                            <td>@item.FullName</td>
+                            <td>@item.Faculty</td>
+                            <td>@item.DateOfBirth</td>
+                            <td>@item.Gender</td>
+                            <td>@item.MobileNumber</td>
+                            <td>@item.Address</td>
+                            <td>
+                                <form method="post" asp-action="UpdateStudent" asp-route-studentId="@item.StuId">
+                                    <button>Edit</button>
+                                </form>
+                                <form method="post" asp-action="ConfirmDeletion" asp-route-Id="@item.StuId">
+                                    <button>Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <p>@ViewBag.Message</p>
+        }
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+

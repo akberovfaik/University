@@ -1,0 +1,43 @@
+﻿@using University.ViewModels
+@model Student_GradeViewModel
+@{
+    ViewData["Title"] = "StuGrades";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grades</title>
+    <link rel="stylesheet" href="~/css/studentGradesStyle.css" />
+</head>
+<body>
+    <div class="container">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.Grade)
+                    {
+                        <tr>
+                            <td>@item.StudentName</td>
+                            <td>@item.SubjectOfGrade</td>
+                            <td>@item.Grade</td>
+                            <td>@item.GradeDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+

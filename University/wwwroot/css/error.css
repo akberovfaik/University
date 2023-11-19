@@ -1,0 +1,14 @@
+.not-found-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+    .not-found-container h1 {
+        color: #dc3545;
+    }
+
+    .not-found-container p {
+        color: #6c757d;
+    }

@@ -1,0 +1,53 @@
+﻿@using University.ViewModels
+@model UserDetail
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css" />
+    <title>User Registration Page</title>
+</head>
+<body>
+    <div class="container">
+        <h1>User Registration</h1>
+        <div class="registration-form">
+            <form method="post" asp-controller="Account" asp-action="Register">
+                <div class="input-group">
+                    <label for="username">Create Username:</label>
+                    <input name="UserName" type="text" id="username" placeholder="Username" required />
+                </div>
+                <div class="input-group">
+                    <label for="email">Enter Email:</label>
+                    <input name="EmailAddress" type="email" id="email" placeholder="Email" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">Create Password:</label>
+                    <input name="UserPassWord" type="password" id="password" placeholder="Password" required />
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input name="ConfirmPassword" type="password" id="confirm-password" placeholder="Confirm Password" required />
+                </div>
+                <br />
+                <br />
+                <label>Choose Role:</label>
+                <div>
+                    <input type="radio" id="roleAdmin" name="UserRole" value="Admin" required>
+                    <label for="roleAdmin">Admin</label>
+                    <input type="radio" id="roleTeacher" name="UserRole" value="Teacher" required>
+                    <label for="roleTeacher">Teacher</label>
+                    <input type="radio" id="roleStudent" name="UserRole" value="Student" required>
+                    <label for="roleStudent">Student</label>
+                    <br />
+                </div>
+                <button type="submit" id="register-button">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.centered-text {
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    margin-bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+    .centered-text h1 {
+        font-weight: 700;
+        font-size: 40px;
+        color: black;
+    }
+
+    .centered-text h2 {
+        font-size: 40px;
+        color: rgb(49, 49, 49);
+    }

@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/hellouser.css" />
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">
+            <div class="centered-text">
+                <h1>Welcome</h1>
+                <h2>@User.Identity.Name</h2>
+            </div>
+        </h1>
+    </div>
+</body>
+</html>

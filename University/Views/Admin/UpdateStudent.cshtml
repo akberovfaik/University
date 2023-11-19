@@ -1,0 +1,38 @@
+﻿@model University.Data.Students
+@{
+    ViewData["Title"] = "Edit Students";
+}
+
+<h1>Edit Students</h1>
+<head>
+    <link rel="stylesheet" href="~/css/updatestudent.css" />
+</head>
+<form method="post" asp-action="SaveChanges" asp-controller="Admin">
+    <input type="hidden" asp-for="StuId" />
+
+    <label for="name">FullName:</label>
+    <input type="text" id="name" name="FullName" asp-for="FullName" required />
+
+    <label for="name">Faculty:</label>
+    <input type="text" id="faculty" name="Faculty" asp-for="Faculty" required />
+
+    <label for="date">Date Of Birth:</label>
+    <input type="date" id="date" name="DateOfBirth" asp-for="DateOfBirth" required />
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="Gender" asp-for="Gender" required>
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="text" id="mobile" name="MobileNumber" asp-for="MobileNumber" required />
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="Address" asp-for="Address" required />
+
+    <button asp-action="SaveChanges" asp-controller="Admin" type="submit">Save Changes</button>
+</form>
+
+

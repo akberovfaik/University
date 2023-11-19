@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.registration-form {
+  margin-top: 30px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.input-group label {
+  width: 120px;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+}
+
+.registration-form p {
+  text-align: left;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.role-selection {
+  display: flex;
+  margin: 10px 0;
+}
+
+.role-selection label {
+  margin-right: 10px;
+}
+
+.registration-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.registration-form button:hover {
+  background-color: #0090ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
